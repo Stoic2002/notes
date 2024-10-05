@@ -49,16 +49,6 @@ Before starting, make sure you have the following installed:
 
    The app will run at `http://localhost:3000`.
 
-## Usage
-
-### Creating a New Note
-To create a new note, click the "New Note" button on the homepage. This will open a form where you can enter the title and content of your note. Once you're done, click "Save" to add the note.
-
-### Editing a Note
-To edit a note, select the note from the list that you want to modify. The note will open in edit mode. After making the necessary changes, click "Save" to update the note.
-
-### Deleting a Note
-To delete a note, click the delete icon next to the note. A confirmation prompt will appear, asking if you're sure you want to delete the note. If confirmed, the note will be removed from the list.
 
 ## Prisma Schema
 
@@ -84,21 +74,3 @@ You need to configure the following environment variable in your `.env` file:
   ```env
   DATABASE_URL="postgresql://username:password@localhost:5432/notes_app"
   ```
-
-## Deployment
-
-For deployment, platforms like [Vercel](https://vercel.com/) or [Heroku](https://www.heroku.com/) are suitable as they support Next.js and PostgreSQL natively.
-
-### Deployment Steps for Vercel:
-
-1. Push your code to a repository on GitHub or GitLab.
-2. Log in to [Vercel](https://vercel.com/), import your project from the repository, and follow the deployment instructions.
-3. Set the required environment variables (e.g., `DATABASE_URL`) in the Vercel dashboard.
-4. Deploy the application.
-
-## Conclusion
-
-The Notes App provides a simple and effective way to manage notes, with modern web technologies like Next.js and Prisma making it easy to extend and scale. Feel free to modify and customize it to suit your needs!
-```
-
-This version starts from the beginning, explaining the purpose of the app, the technologies used, and the setup instructions. Let me know if you'd like to make any changes!
