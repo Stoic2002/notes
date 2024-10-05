@@ -18,11 +18,16 @@ status = 200
   w = ":width"
   q = ":quality"
 
+[build]
+  command = "npm run build"
+  functions = "netlify/functions"
+  publish = ".next"
+
 [[plugins]]
-package = 'netlify-plugin-prisma-provider'
-  [plugins.inputs]
-  path = 'prisma/schema.prisma'
-  varName = 'DATABASE_PROVIDER'
+  package = "@netlify/plugin-nextjs"
+
+[functions]
+  included_files = ["prisma/**"]
 
 [context]
 
