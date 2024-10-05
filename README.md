@@ -23,7 +23,7 @@ Before starting, make sure you have the following installed:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/username/notes_app.git
+   git clone https://github.com/Stoic2002/notes_app.git
    cd notes_app
    ```
 
