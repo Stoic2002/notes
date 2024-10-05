@@ -4,15 +4,10 @@ declare global {
   var prisma: PrismaClient | undefined
 }
 
-let prisma: PrismaClient
+const prismaClient = global.prisma || new PrismaClient()
 
-if (process.env.NODE_ENV === 'production') {
-  prisma = new PrismaClient()
-} else {
-  if (!global.prisma) {
-    global.prisma = new PrismaClient()
-  }
-  prisma = global.prisma
+if (process.env.NODE_ENV !== 'production') {
+  global.prisma = prismaClient
 }
 
-export default prisma
+export default prismaClient

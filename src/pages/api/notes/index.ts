@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         orderBy: { createdAt: 'desc' },
       });
       res.status(200).json(notes);
-    } catch (error) {
+    } catch (_) {
       res.status(500).json({ message: 'Error fetching notes' });
     }
   } else if (req.method === 'POST') {
@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         data: { title, content },
       });
       res.status(201).json(note);
-    } catch (error) {
+    } catch (_) {
       res.status(500).json({ message: 'Error creating note' });
     }
   } else {
