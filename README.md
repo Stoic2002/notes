@@ -49,28 +49,3 @@ Before starting, make sure you have the following installed:
 
    The app will run at `http://localhost:3000`.
 
-
-## Prisma Schema
-
-The Prisma schema defines the `Note` model, which is stored in the PostgreSQL database. Here’s an example of the schema:
-
-```prisma
-model Note {
-  id        Int      @id @default(autoincrement())
-  title     String
-  content   String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-```
-
-## Environment Variables
-
-You need to configure the following environment variable in your `.env` file:
-
-- `DATABASE_URL`: The URL of your PostgreSQL database.
-
-  Example:
-  ```env
-  DATABASE_URL="postgresql://username:password@localhost:5432/notes_app"
-  ```
