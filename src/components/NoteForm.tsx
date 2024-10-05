@@ -53,6 +53,7 @@ const NoteForm: React.FC<NoteFormProps> = ({
         placeholder="Content"
         className="w-full mb-4 p-2 border border-purple-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-800"
         rows={4}
+        maxLength={30} // Maximum length set to 30 characters
         required
       />
       <div className="flex justify-end space-x-2">

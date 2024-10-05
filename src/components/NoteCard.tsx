@@ -12,8 +12,8 @@ interface NoteCardProps {
 const NoteCard: React.FC<NoteCardProps> = ({ id, title, content, onEdit, onDelete }) => {
   return (
     <div className="bg-white shadow-md rounded-lg p-4 mb-4 transition-all duration-300 hover:shadow-lg">
-      <h3 className="text-xl font-semibold mb-2 text-purple-800">{title}</h3>
-      <p className="text-gray-600 mb-4">{content}</p>
+    <h3 className="text-xl font-semibold mb-2 text-purple-800 truncate max-w-full">{title}</h3>
+    <p className="text-gray-600 mb-4 overflow-hidden whitespace-nowrap text-ellipsis">{content}</p>
       <div className="flex justify-end">
         <button
           onClick={() => onEdit(id)}
