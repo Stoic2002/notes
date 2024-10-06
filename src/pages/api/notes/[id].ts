@@ -14,8 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       } else {
         res.status(404).json({ message: 'Note not found' });
       }
-    } catch (e) {
-        console.log(e);
+    } catch (_) {
       res.status(500).json({ message: 'Error fetching note' });
     }
   } else if (req.method === 'PUT') {
@@ -26,8 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         data: { title, content },
       });
       res.status(200).json(updatedNote);
-    } catch (e) {
-        console.log(e);
+    } catch (_) {
       res.status(500).json({ message: 'Error updating note' });
     }
   } else if (req.method === 'DELETE') {
@@ -36,8 +34,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         where: { id: String(id) },
       });
       res.status(204).end();
-    } catch (e) {
-        console.log(e);
+    } catch (_) {
       res.status(500).json({ message: 'Error deleting note' });
     }
   } else {
