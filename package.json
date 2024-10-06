@@ -12,7 +12,7 @@
   "dependencies": {
     "@netlify/plugin-nextjs": "^5.7.3",
     "@prisma/client": "^5.20.0",
-    "next": "13.4.8",
+    "next": "14.2.0",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.3.0"
