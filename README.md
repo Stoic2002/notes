@@ -49,3 +49,6 @@ Before starting, make sure you have the following installed:
 
    The app will run at `http://localhost:3000`.
 
+## Preview link
+
+   `https://notes-henna-ten-42.vercel.app/`
