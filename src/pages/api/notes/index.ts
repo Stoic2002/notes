@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next'
 import prisma from '../../../utils/prisma';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -6,23 +6,25 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {
       const notes = await prisma.note.findMany({
         orderBy: { createdAt: 'desc' },
-      });
-      res.status(200).json(notes);
-    } catch (_) {
-      res.status(500).json({ message: 'Error fetching notes' });
+      })
+      res.status(200).json(notes)
+    } catch (error) {
+      console.error('Error fetching notes:', error)
+      res.status(500).json({ message: 'Error fetching notes' })
     }
   } else if (req.method === 'POST') {
-    const { title, content } = req.body;
+    const { title, content } = req.body
     try {
       const note = await prisma.note.create({
         data: { title, content },
-      });
-      res.status(201).json(note);
-    } catch (_) {
-      res.status(500).json({ message: 'Error creating note' });
+      })
+      res.status(201).json(note)
+    } catch (error) {
+      console.error('Error creating note:', error)
+      res.status(500).json({ message: 'Error creating note' })
     }
   } else {
-    res.setHeader('Allow', ['GET', 'POST']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+    res.setHeader('Allow', ['GET', 'POST'])
+    res.status(405).end(`Method ${req.method} Not Allowed`)
   }
 }
